@@ -18,10 +18,10 @@ if __name__ == "__main__":
 
     for n in range(1, max_n + 1):
         fib(n)                      # 3️⃣ compute next fib
-        elapsed = time.perf_counter() - start
+        elapsed_time = time.perf_counter() - start
         ns.append(n)
         times.append(elapsed) #add new elapsed time 'times' list
-        print(f"n={n}, total time={elapsed:.6f}s")
+        print(f"n={n}, total time={elapsed_time:.6f}s")
 
     plt.plot(ns, times, marker='o')
     plt.xlabel("n")
@@ -29,3 +29,4 @@ if __name__ == "__main__":
     plt.title("Total Fibonacci Computation Time with Caching")
     plt.grid(True)
     plt.show()
+

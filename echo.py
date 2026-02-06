@@ -7,6 +7,8 @@ def echo(text: str, repetitions: int = 3) -> str:
 
     print('.')
 
+    return 1
+
 if __name__ == "__main__":
     text = input("Yell something at a mountain: ")
-    print(echo(text))
+    mech = echo(text)

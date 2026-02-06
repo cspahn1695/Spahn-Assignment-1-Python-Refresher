@@ -8,29 +8,24 @@ def fib(n: int) -> int:
         return n
     return fib(n - 1) + fib(n - 2)
 
-def time_fib(n: int) -> float:
-    fib.cache_clear()          # IMPORTANT for fair timing
-    start = time.perf_counter()
-    fib(n)
-    end = time.perf_counter()
-    return end - start
-
 if __name__ == "__main__":
-    max_n = 40                 # adjust if needed
+    max_n = 100
     ns = []
     times = []
 
-    for n in range(1, max_n + 1):
-        t = time_fib(n)
-        ns.append(n)
-        times.append(t)
-        print(f"finished in {t:.8f}s, f({n:2d})={fib(n)}")
+    fib.cache_clear()               # 1️⃣ clear cache once
+    start = time.perf_counter()     # 2️⃣ start total timer
 
-    # Plot
-    plt.figure()
+    for n in range(1, max_n + 1):
+        fib(n)                      # 3️⃣ compute next fib
+        elapsed = time.perf_counter() - start
+        ns.append(n)
+        times.append(elapsed) #add new elapsed time 'times' list
+        print(f"n={n}, total time={elapsed:.6f}s")
+
     plt.plot(ns, times, marker='o')
-    plt.xlabel("n (largest Fibonacci index)")
-    plt.ylabel("Time to compute fib(n) [seconds]")
-    plt.title("Fibonacci Computation Time vs n")
+    plt.xlabel("n")
+    plt.ylabel("Total computation time (s)")
+    plt.title("Total Fibonacci Computation Time with Caching")
     plt.grid(True)
     plt.show()

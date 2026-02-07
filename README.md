@@ -12,6 +12,7 @@ The output is displayed in the image below.
 
 
 My code in my echo.py file is displayed below.
-<img width="896" height="396" alt="image" src="https://github.com/user-attachments/assets/f478164a-ed06-4fae-9b25-d7a89291421a" />
+<img width="987" height="362" alt="image" src="https://github.com/user-attachments/assets/51380f25-29bf-436c-b435-b4dfddec6d51" />
+
 The output is displayed below.
 <img width="897" height="237" alt="image" src="https://github.com/user-attachments/assets/2bd64b71-afeb-4452-b23f-d064eb619b41" />
